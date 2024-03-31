@@ -5,7 +5,12 @@ from .utils import calculate_birthday_countdown
 
 def birthday(request, pk=None):
     instance = get_object_or_404(Birthday, pk=pk) if pk is not None else None
-    form = BirthdayForm(request.POST or None, instance=instance)
+    print(request.FILES)
+    form = BirthdayForm(
+        request.POST or None,
+        files=request.FILES or None,
+        instance=instance
+    )
     context = {'form': form}
     if form.is_valid():
         form.save()
