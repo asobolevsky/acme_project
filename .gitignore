@@ -130,4 +130,6 @@ dmypy.json
 
 .idea
 
+# Debug resource files
 media/
+sent_emails/
