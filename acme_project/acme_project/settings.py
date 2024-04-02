@@ -17,6 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'birthday.apps.BirthdayConfig',
     'pages.apps.PagesConfig',
+    'user.apps.UserConfig',
     'django_bootstrap5',
     'debug_toolbar',
 ]
@@ -96,8 +97,10 @@ INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
+AUTH_USER_MODEL = 'user.MyUser'
+
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
 
 LOGIN_REDIRECT_URL = 'pages:homepage'
-LOGIN_URL = 'login' 
+LOGIN_URL = 'login'
