@@ -16,4 +16,10 @@
   {% else %}
     <p>Осталось дней до дня рождения: {{ birthday_countdown }}!</p>
   {% endif %}
+  {% if birthday.author == user %}
+  <div>
+    <a href="{% url 'birthday:edit' birthday.id %}">Изменить запись</a> |
+    <a href="{% url 'birthday:delete' birthday.id %}">Удалить запись</a>
+  </div>
+  {% endif %}
 {% endblock content %}
