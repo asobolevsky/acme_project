@@ -18,9 +18,4 @@ class Migration(migrations.Migration):
             name='author',
             field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='Автор записи'),
         ),
-        migrations.AlterField(
-            model_name='birthday',
-            name='image',
-            field=models.ImageField(blank=True, upload_to='birthdays_images', verbose_name='Фото'),
-        ),
     ]
