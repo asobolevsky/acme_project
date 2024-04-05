@@ -5,6 +5,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import include, path, reverse_lazy
 from django.views.generic import CreateView
 
+handler403 = 'core.views.csrf_failure'
+handler404 = 'core.views.page_not_found'
+
 urlpatterns = [
     path('', include('pages.urls')),
     path('admin/', admin.site.urls),

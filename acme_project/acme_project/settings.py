@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'birthday.apps.BirthdayConfig',
     'pages.apps.PagesConfig',
     'user.apps.UserConfig',
+    'core.apps.CoreConfig',
     'django_bootstrap5',
     'debug_toolbar',
 ]
@@ -92,6 +93,16 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    # Когда проект будет опубликован и станет доступен для пользователей,
+    # в этот список нужно будет добавить и адреса домена, где он будет размещён,
+    # например 'acme.not' и 'www.acme.not'
+]
+
+CSRF_FAILURE_VIEW = 'core.views.csrf_failure'
 
 INTERNAL_IPS = [
     '127.0.0.1',
